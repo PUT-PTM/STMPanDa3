@@ -4,10 +4,14 @@ using System.Collections;
 
 public class Patrol : MonoBehaviour
 {
+    public int sPoints = 10;
+
+    public LvlManager lvlman;
 
     public Transform[] patrolPoints;
     public float moveSpeed;
     private int currentPoint;
+
     // Use this for initialization
 
     void Start()
@@ -35,7 +39,7 @@ public class Patrol : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        
+        lvlman.AddPoints(sPoints);
             Destroy(GameObject.Find(this.gameObject.name), 0);
 
     }
