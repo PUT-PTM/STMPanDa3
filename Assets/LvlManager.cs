@@ -24,7 +24,7 @@ public class LvlManager : MonoBehaviour
 
     void OnGUI()
     {
-        guiStyle.fontSize = 20;
+        guiStyle.fontSize = 50;
         GUI.contentColor = Color.black;
         GUILayout.Label(score.ToString(), guiStyle);
     }
