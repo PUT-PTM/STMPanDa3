@@ -35,15 +35,17 @@ public class Patrol : MonoBehaviour
         }
 
         transform.position = Vector2.MoveTowards(transform.position, patrolPoints[currentPoint].position, moveSpeed = Time.deltaTime);
+        
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if(this.gameObject.name == "ocena2")
+        if(other.gameObject.name == "PanDa3")
         {
             lvlman.AddPoints(sPoints);
         Destroy(GameObject.Find(this.gameObject.name), 0);
         }
+        
 
     }
 
