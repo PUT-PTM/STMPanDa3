@@ -5,6 +5,7 @@ using System.Collections;
 public class Patrol : MonoBehaviour
 {
     public int sPoints = 10;
+    public int mPoints = -30;
 
     public LvlManager lvlman;
 
@@ -42,8 +43,16 @@ public class Patrol : MonoBehaviour
     {
         if(other.gameObject.name == "PanDa3")
         {
-            lvlman.AddPoints(sPoints);
+            if(this.gameObject.name == "ocena2")
+            {
+                lvlman.AddPoints(mPoints);
         Destroy(GameObject.Find(this.gameObject.name), 0);
+            }
+            else
+            {
+                lvlman.AddPoints(sPoints);
+                Destroy(GameObject.Find(this.gameObject.name), 0);
+            }
         }
         
 
