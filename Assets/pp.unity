@@ -198,8 +198,8 @@ Rigidbody2D:
   m_GameObject: {fileID: 38053455}
   m_UseAutoMass: 1
   m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_LinearDrag: 3
+  m_AngularDrag: 3
   m_GravityScale: 1
   m_IsKinematic: 1
   m_Interpolate: 0
@@ -1092,8 +1092,8 @@ Rigidbody2D:
   m_GameObject: {fileID: 1247307182}
   m_UseAutoMass: 1
   m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_LinearDrag: 4
+  m_AngularDrag: 4
   m_GravityScale: 1
   m_IsKinematic: 1
   m_Interpolate: 0
@@ -1372,9 +1372,9 @@ Rigidbody2D:
   m_GameObject: {fileID: 1404271693}
   m_UseAutoMass: 1
   m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_LinearDrag: 2
+  m_AngularDrag: 2
+  m_GravityScale: 4
   m_IsKinematic: 1
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -1419,7 +1419,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sPoints: 10
   mPoints: -30
-  lvlman: {fileID: 0}
+  lvlman: {fileID: 1160320339}
   patrolPoints:
   - {fileID: 1230120493}
   - {fileID: 1381531300}
