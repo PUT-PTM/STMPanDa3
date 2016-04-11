@@ -22,11 +22,10 @@ public class PandaMove : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.RightArrow))
         {
-
-
             transform.rotation = Quaternion.AngleAxis(180, Vector3.up);
             transform.position += moveDir * speed * Time.deltaTime;
         }
-    }   
-	
+    }
+
+
 }
