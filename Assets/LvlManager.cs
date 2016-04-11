@@ -20,9 +20,12 @@ public class LvlManager : MonoBehaviour
     {
         score += points;
     }
+    private GUIStyle guiStyle = new GUIStyle(); //create a new variable
+
     void OnGUI()
     {
+        guiStyle.fontSize = 20;
         GUI.contentColor = Color.black;
-        GUILayout.Label(score.ToString());
+        GUILayout.Label(score.ToString(), guiStyle);
     }
 }
