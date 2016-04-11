@@ -39,8 +39,11 @@ public class Patrol : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        lvlman.AddPoints(sPoints);
+        if(this.gameObject.name == "ocena2")
+        {
+            lvlman.AddPoints(sPoints);
         Destroy(GameObject.Find(this.gameObject.name), 0);
+        }
 
     }
 

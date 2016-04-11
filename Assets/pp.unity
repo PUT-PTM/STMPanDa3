@@ -708,7 +708,6 @@ GameObject:
   - 4: {fileID: 1376534323}
   - 114: {fileID: 1376534324}
   - 50: {fileID: 1376534326}
-  - 114: {fileID: 1376534327}
   - 23: {fileID: 1376534328}
   - 61: {fileID: 1376534325}
   m_Layer: 0
@@ -779,17 +778,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 3
---- !u!114 &1376534327
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1376534322}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c57bf66f2c5eba4cad4014bf8b9b269, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!23 &1376534328
 MeshRenderer:
   m_ObjectHideFlags: 0
