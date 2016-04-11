@@ -16,7 +16,7 @@ public class Patrol : MonoBehaviour
 
     void Start()
     {
-        transform.position = patrolPoints[0].position;
+       transform.position = patrolPoints[0].position;
         currentPoint = 0;
     }
 
