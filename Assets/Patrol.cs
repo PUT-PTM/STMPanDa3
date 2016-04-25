@@ -13,6 +13,7 @@ public class Patrol : MonoBehaviour
     public float moveSpeed;
     private int currentPoint;
 
+
     // Use this for initialization
 
     void Start()
@@ -22,8 +23,9 @@ public class Patrol : MonoBehaviour
     }
 
     // Update is called once per frame
+
     void Update()
-    {
+    {      
         if (transform.position == patrolPoints[currentPoint].position)
         {
 
@@ -54,7 +56,15 @@ public class Patrol : MonoBehaviour
                 Destroy(GameObject.Find(this.gameObject.name), 0);
             }
         }
-        
+        if (other.gameObject.name == "ground")
+        {
+            if (this.gameObject.name != "ocena2")
+            {
+                lvlman.DecLives();
+                Destroy(GameObject.Find(this.gameObject.name), 0);
+            }
+            else Destroy(GameObject.Find(this.gameObject.name), 0);
+        }
 
     }
 
