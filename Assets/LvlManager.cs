@@ -6,6 +6,7 @@ public class LvlManager : MonoBehaviour
 
     public int score;
     public int lives;
+    public GameObject restartText;
     // Use this for initialization
     void Start()
     {
@@ -17,8 +18,12 @@ public class LvlManager : MonoBehaviour
     {
         if (lives <= 0)
         {
-            // .. then reload the currently loaded level.
-            Application.LoadLevel(Application.loadedLevel);
+            restartText.SetActive(true);
+            if (Input.GetKeyDown(KeyCode.R))
+                Application.LoadLevel(Application.loadedLevel);
+
+            Destroy(GameObject.Find("PanDa3"), 0);
+            return; 
         }
     }
     public void AddPoints(int points)

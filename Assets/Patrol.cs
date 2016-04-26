@@ -37,7 +37,7 @@ public class Patrol : MonoBehaviour
             transform.position = patrolPoints[0].position;
         }
 
-        transform.position = Vector2.MoveTowards(transform.position, patrolPoints[currentPoint].position, moveSpeed = Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, patrolPoints[currentPoint].position, moveSpeed = Time.deltaTime*2);
         
     }
 
