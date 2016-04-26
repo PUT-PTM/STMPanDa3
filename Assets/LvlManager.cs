@@ -18,7 +18,7 @@ public class LvlManager : MonoBehaviour
     {
         if (lives <= 0)
         {
-            restartText.SetActive(true);
+           // restartText.SetActive(true);
             if (Input.GetKeyDown(KeyCode.R))
                 Application.LoadLevel(Application.loadedLevel);
 
