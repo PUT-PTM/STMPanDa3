@@ -13,30 +13,40 @@ public class Patrol : MonoBehaviour
     public Transform[] patrolPoints;
     public float moveSpeed;
     private int currentPoint;
-    public int objectCount;
-
+    public GameObject note;
     // Use this for initialization
 
     void Start()
     {
        transform.position = patrolPoints[0].position;
         currentPoint = 0;
+       StartCoroutine(i());
+    }
+    IEnumerator i()
+    {
+        float a = 5;
+        yield return new WaitForSeconds(a);
+        newenemy();
 
-       
     }
 
+    void newenemy()
+    {
+        GameObject.Instantiate(this.gameObject);
+        StartCoroutine(i());
+    }
     // Update is called once per frame
 
     void Update()
     {
-        
-        if (objectCount < 2)
-        {
-            objectCount++;
 
-            var note = GameObject.Instantiate(this.gameObject);
-          
-        }
+        //if ((objectCount%5<1)&&(objectCount < 100))
+        //{
+        //    objectCount++;
+
+        //    var note = GameObject.Instantiate(this.gameObject);
+
+        //}
        
         if (transform.position == patrolPoints[currentPoint].position)
         {
