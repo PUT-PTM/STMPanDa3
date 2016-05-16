@@ -31,6 +31,11 @@ public class LvlManager : MonoBehaviour
             return; 
         }
     }
+    public float fallSpeed()
+    {
+        float speed=score/100;
+        return speed;
+    }
     public void AddPoints(int points)
     {
         score += points;

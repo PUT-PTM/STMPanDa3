@@ -24,7 +24,7 @@ public class Patrol : MonoBehaviour
     }
     IEnumerator i()
     {
-        float a = 5;
+        float a = 3;
         yield return new WaitForSeconds(a);
         newenemy();
 
@@ -59,7 +59,7 @@ public class Patrol : MonoBehaviour
             transform.position = patrolPoints[0].position;
         }
 
-        transform.position = Vector2.MoveTowards(transform.position, patrolPoints[currentPoint].position, moveSpeed = Time.deltaTime*2);
+        transform.position = Vector2.MoveTowards(transform.position, patrolPoints[currentPoint].position, moveSpeed = Time.deltaTime * 2 * (1+lvlman.fallSpeed()));
         
     }
 
