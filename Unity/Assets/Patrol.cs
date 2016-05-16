@@ -72,12 +72,12 @@ public class Patrol : MonoBehaviour
             if(this.gameObject.name == "ocena2")
             {
                 lvlman.AddPoints(mPoints);
-        Destroy(GameObject.Find(this.gameObject.name), 0);
+        Destroy(this.gameObject, 0);
             }
             else
             {
                 lvlman.AddPoints(sPoints);
-                Destroy(GameObject.Find(this.gameObject.name), 0);
+                Destroy(this.gameObject, 0);
             }
         }
         if (other.gameObject.name == "ground")
@@ -85,9 +85,9 @@ public class Patrol : MonoBehaviour
             if (this.gameObject.name != "ocena2")
             {
                 lvlman.DecLives();
-                Destroy(GameObject.Find(this.gameObject.name), 0);
+                Destroy(this.gameObject, 0);
             }
-            else Destroy(GameObject.Find(this.gameObject.name), 0);
+            else Destroy(this.gameObject, 0);
         }
 
     }
