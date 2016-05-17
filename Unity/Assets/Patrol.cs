@@ -20,7 +20,7 @@ public class Patrol : MonoBehaviour
     {
        transform.position = patrolPoints[0].position;
         currentPoint = 0;
-       StartCoroutine(i());
+      // StartCoroutine(i());
     }
     IEnumerator i()
     {
@@ -47,7 +47,11 @@ public class Patrol : MonoBehaviour
         //    var note = GameObject.Instantiate(this.gameObject);
 
         //}
-       
+
+        if (lvlman.lives<=0)
+        {
+            StopAllCoroutines();
+        }
         if (transform.position == patrolPoints[currentPoint].position)
         {
 
@@ -58,9 +62,16 @@ public class Patrol : MonoBehaviour
         {
             transform.position = patrolPoints[0].position;
         }
-
-        transform.position = Vector2.MoveTowards(transform.position, patrolPoints[currentPoint].position, moveSpeed = Time.deltaTime * 2 * (1+lvlman.fallSpeed()));
-        
+        if (lvlman.lives <=0)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, patrolPoints[currentPoint].position,
+               moveSpeed = 0);
+        }
+        else
+        {
+        transform.position = Vector2.MoveTowards(transform.position, patrolPoints[currentPoint].position,
+            moveSpeed = Time.deltaTime  * (2+lvlman.fallSpeed()));
+        }
     }
 
 
