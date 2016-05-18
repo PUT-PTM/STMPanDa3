@@ -20,7 +20,7 @@
 #include "stm32f4xx_spi.h"
 
 //Variables which represent of STM-board position on X-axis, Y-axis and Z-axis
-int8_t acc_x;
+int8_t acc_x,acc_y;
 
 void LIS302DL_Init1()
 {
@@ -54,8 +54,6 @@ int main(void) {
 	/* Initialize system */
 	SystemInit();
 
-	//Initialize LIS302DL - acceleration sensor;...
-	//... the board position determines the movement of joystick
 
 	LIS302DL_Init1();
 
@@ -76,13 +74,6 @@ int main(void) {
 	TM_USB_HIDDEVICE_GamepadStructInit(&Gamepad1);
 	TM_USB_HIDDEVICE_GamepadStructInit(&Gamepad2);
 
-	//Variables
-	const int8_t axis_x_min = 0; //The number represents maximum deflection of left-stick on left; Default: -128 (!The value recommended for Unity game: 0 - Unity can read only not minus numbers of axis!)
-	const int8_t axis_x_max = 127; //The number represents maximum deflection of left-stick on right; Default: 127
-	const int8_t axis_x_avg = (axis_x_min + axis_x_max) / 2; //The value presented center position of left stick
-	const int8_t acc_x_min = -62; //Minimum (approximately) value reading from accelerometer for X-axis
-	const int8_t acc_x_max = 62;//Maximum (approximately) value reading from accelerometer for X-axis
-	const int8_t k = (-axis_x_min + axis_x_max) / (-acc_x_min + acc_x_max); //Thanks to this ratio, can create universal formula on value of gamepad left-axis depends on STM-board position
 
 	while (1) {
 		/* If we are connected and drivers are OK */
@@ -107,9 +98,7 @@ int main(void) {
 			} else if (!TM_DISCO_ButtonPressed() && already == 1) { /* Button on release */
 				already = 0;
 
-				//I thought the command that is 5 lines below was sufficient but no...
-				//I released blue button but computer "thought" I still pressed it.
-				Gamepad1.Button1 = TM_USB_HIDDEVICE_Button_Released; //release button 1
+				Gamepad1.Button1 = TM_USB_HIDDEVICE_Button_Released;
 
 
 				/* Send command to release all buttons on both gamepads */
@@ -117,39 +106,65 @@ int main(void) {
 			}
 
 			// Read the board position on axes
-			LIS302DL_Read(&acc_x,LIS302DL_OUT_X_ADDR,1);
+			LIS302DL_Read(&acc_x,LIS302DL_OUT_X_ADDR,1); //vertical position
+			LIS302DL_Read(&acc_y,LIS302DL_OUT_Y_ADDR,1); //horizontal position
 
 
-			//The value on axis depends on board lean
-			//HERE: Changing orientation of left joystick under the influence of X-axis
 
-			/* Simulate left stick rotation */
-			//* X axis */
 
-			if (acc_x > -15 && acc_x < 15) //horizontal position of STM-board
-						{
-							Gamepad1.LeftXAxis = axis_x_avg;
-						}
-						else
-						{
-							if (acc_x >= acc_x_max ) //maximum right position --> vertical position of STM-board (USB mini-B on top of board)
-							{
-								Gamepad1.LeftXAxis = axis_x_max;
-							}
-							else
-							{
-								if (acc_x <= acc_x_min) //maximum left position --> vertical position of STM-board (mini-jack out and USB micro-B on top )
-								{
-									Gamepad1.LeftXAxis = axis_x_min;
-								}
-								else
+				//vertical Axis
 
-								{
-									Gamepad1.LeftXAxis = acc_x * k + axis_x_avg; //universal formula on left-stick position of gamepad depending on STM position
-									//it seems to be sufficient (without if-conditionals); but using of "if", it ensures more stability
-								}
-							}
+			if (acc_y > -15 && acc_y < 15)
+			{
+				Gamepad1.LeftXAxis = 63.5;
+			}
+			else
+			{
+				if (acc_y >= 60 )
+				{
+					Gamepad1.LeftXAxis = 127;
+				}
+				else
+				{
+					if (acc_y <= -60)
+					{
+						Gamepad1.LeftXAxis = 0;
 					}
+					else
+					{
+					Gamepad1.LeftXAxis = acc_y + 63.5;
+
+					}
+				}
+					}
+
+			//horizontal Axis
+
+			if (acc_x > -15 && acc_x < 15)
+			{
+				Gamepad1.LeftYAxis = 63.5;
+			}
+			else
+			{
+				if (acc_x >= 60 )
+				{
+					Gamepad1.LeftYAxis = 127;
+				}
+				else
+				{
+					if (acc_x <= -60)
+					{
+						Gamepad1.LeftYAxis = 0;
+					}
+					else
+					{
+					Gamepad1.LeftYAxis = acc_x + 63.5;
+
+					}
+				}
+					}
+
+
 
 			TM_USB_HIDDEVICE_GamepadSend(TM_USB_HIDDEVICE_Gamepad_Number_1, &Gamepad1);
 

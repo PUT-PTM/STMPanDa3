@@ -20,7 +20,7 @@ public class Patrol : MonoBehaviour
     {
        transform.position = patrolPoints[0].position;
         currentPoint = 0;
-      // StartCoroutine(i());
+       StartCoroutine(i());
     }
     IEnumerator i()
     {
@@ -82,21 +82,24 @@ public class Patrol : MonoBehaviour
         {
             if(this.gameObject.name == "ocena2")
             {
+                Destroy(this.gameObject, 0);
                 lvlman.AddPoints(mPoints);
         Destroy(this.gameObject, 0);
             }
             else
             {
-                lvlman.AddPoints(sPoints);
                 Destroy(this.gameObject, 0);
+                lvlman.AddPoints(sPoints);
+              
             }
         }
         if (other.gameObject.name == "ground")
         {
             if (this.gameObject.name != "ocena2")
             {
-                lvlman.DecLives();
                 Destroy(this.gameObject, 0);
+                lvlman.DecLives();
+               
             }
             else Destroy(this.gameObject, 0);
         }
