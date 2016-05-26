@@ -3,8 +3,8 @@ using System.Collections;
 
 public class LvlManager : MonoBehaviour
 {
-
-    public int score;
+    public int highScore = 0;
+    public int score = 0;
     public int lives;
     public GameObject restartText;
     // Use this for initialization
@@ -22,7 +22,13 @@ public class LvlManager : MonoBehaviour
        if (lives <= 0)
         {
             // restartText.SetActive(true);
-
+            highScore= PlayerPrefs.GetInt("HighScore");
+            if (highScore<score)
+            {
+                highScore = score;
+                PlayerPrefs.SetInt("HighScore", highScore);           
+          
+            }
             if (Input.GetButtonDown("Fire1"))
                 Application.LoadLevel(Application.loadedLevel);
 
@@ -48,8 +54,14 @@ public class LvlManager : MonoBehaviour
 
     void OnGUI()
     {
-        guiStyle.fontSize = 50;
+        guiStyle.fontSize = 35;
         GUI.contentColor = Color.black;
-        GUILayout.Label(score.ToString() + "\nlives:" + lives.ToString(), guiStyle);
+        highScore= PlayerPrefs.GetInt("HighScore");
+        GUILayout.Label(score.ToString() + "\nHighScore: "+highScore.ToString()+ "\nlives:" + lives.ToString(), guiStyle);
+
     }
+
+
+   
+
 }

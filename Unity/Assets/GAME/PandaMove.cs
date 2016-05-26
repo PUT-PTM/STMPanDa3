@@ -9,14 +9,15 @@ public class PandaMove : MonoBehaviour
     {
         Vector3 moveDir = Vector3.zero;
         moveDir.x = Input.GetAxis("Horizontal");
-        var rot = transform.rotation;
+   
         // get result of AD keys in X
         // move this object at frame rate independent speed:
 
         
         
-        transform.position -= moveDir * speed * Time.deltaTime;
+        transform.position -= moveDir *speed* Time.deltaTime;
         
+    
         if(moveDir.x >0) transform.rotation = Quaternion.AngleAxis(0, Vector3.down); 
         if (moveDir.x < 0) transform.rotation = Quaternion.AngleAxis(180, Vector3.down);
 
