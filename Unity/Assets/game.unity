@@ -916,6 +916,11 @@ MonoBehaviour:
   score: 0
   lives: 0
   restartText: {fileID: 0}
+  ac1: {fileID: 8300000, guid: d851d6bc73b11144f87892358724dcfa, type: 3}
+  ac2: {fileID: 8300000, guid: 5278c1c6114bdf14b8b815b7d3684bb7, type: 3}
+  ac3: {fileID: 8300000, guid: 1eaf8e75446e17d449da0cee4f852001, type: 3}
+  ac4: {fileID: 8300000, guid: 4f2dd9bc08f23664aa3ff97ac7b8c5f5, type: 3}
+  ac5: {fileID: 8300000, guid: 99bdb3686499f66489fdcbd8ac525066, type: 3}
 --- !u!4 &1160320340
 Transform:
   m_ObjectHideFlags: 0
@@ -937,9 +942,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: d851d6bc73b11144f87892358724dcfa, type: 3}
-  m_PlayOnAwake: 0
-  m_Volume: 0.398
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1282,6 +1287,7 @@ GameObject:
   - 50: {fileID: 1376534326}
   - 23: {fileID: 1376534328}
   - 61: {fileID: 1376534325}
+  - 82: {fileID: 1376534327}
   m_Layer: 0
   m_Name: ocena2
   m_TagString: Player
@@ -1352,6 +1358,80 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 3
+--- !u!82 &1376534327
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1376534322}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!23 &1376534328
 MeshRenderer:
   m_ObjectHideFlags: 0

@@ -8,11 +8,18 @@ public class LvlManager : MonoBehaviour
     public int score = 0;
     public int lives;
     public GameObject restartText;
+    public AudioClip ac1;
+    public AudioClip ac2;
+    public AudioClip ac3;
+    public AudioClip ac4;
+    public AudioClip ac5;
+    AudioSource audio;
     // Use this for initialization
     void Start()
     {
-        lives = 100;
-       
+        lives = 3;
+        audio = GetComponent<AudioSource>();
+
     }
 
     // Update is called once per frame
@@ -23,6 +30,7 @@ public class LvlManager : MonoBehaviour
 
         if (lives <= 0)
         {
+           
             // restartText.SetActive(true);
             highScore= PlayerPrefs.GetInt("HighScore");
             if (highScore<score)
@@ -36,6 +44,7 @@ public class LvlManager : MonoBehaviour
 
 
             Destroy(GameObject.Find("PanDa3"), 0);
+            audio.PlayOneShot(ac5, 1.0F);
             return; 
         }
     }
@@ -43,17 +52,23 @@ public class LvlManager : MonoBehaviour
     {
         float speed=score/100;
         return speed;
+
     }
     public void AddPoints(int points)
     {
         score += points;
-       if (points ==10) 
-            GetComponent<AudioSource>().PlayScheduled(1);
+        if(score%100==0) audio.PlayOneShot(ac3, 1.0F);
+
+        if (points == 10)
+            audio.PlayOneShot(ac1,1.0F);
+        else
+            audio.PlayOneShot(ac2, 1.0F);
 
     }
     public void DecLives()
     {
         lives--;
+        audio.PlayOneShot(ac4, 1.0F);
     }
     private GUIStyle guiStyle = new GUIStyle(); //create a new variable
 
