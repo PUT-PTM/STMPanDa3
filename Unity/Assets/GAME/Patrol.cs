@@ -96,7 +96,7 @@ public class Patrol : MonoBehaviour
         }
         if (other.gameObject.name == "ground")
         {
-            GetComponent<AudioSource>().PlayDelayed(3);
+           
             if (this.gameObject.name != "ocena2")
             {
                 Destroy(this.gameObject, 0);

@@ -49,8 +49,6 @@ public class LvlManager : MonoBehaviour
         score += points;
        if (points ==10) 
             GetComponent<AudioSource>().PlayScheduled(1);
-      
-     
 
     }
     public void DecLives()
