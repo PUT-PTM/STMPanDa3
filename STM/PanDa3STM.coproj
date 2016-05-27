@@ -129,9 +129,9 @@
     <File name="defines.h" path="defines.h" type="1"/>
     <File name="main.c" path="main.c" type="1"/>
     <File name="tm/tm_stm32f4_usb_hid_device" path="" type="2"/>
-    <File name="tm/tm_stm32f4_usb_hid_device/usb_hid_device/usbd_usr.h" path="tm/tm_stm32f4_usb_hid_device/usb_hid_device/usbd_usr.h" type="1"/>
     <File name="cmsis_lib/source/stm32f4xx_gpio.c" path="cmsis_lib/source/stm32f4xx_gpio.c" type="1"/>
     <File name="tm/tm_stm32f4_usb_hid_device/usb_hid_device/usbd_req.h" path="tm/tm_stm32f4_usb_hid_device/usb_hid_device/usbd_req.h" type="1"/>
+    <File name="tm/tm_stm32f4_usb_hid_device/usb_hid_device/usbd_usr.h" path="tm/tm_stm32f4_usb_hid_device/usb_hid_device/usbd_usr.h" type="1"/>
     <File name="cmsis_lib/include/stm32f4xx_i2c.h" path="cmsis_lib/include/stm32f4xx_i2c.h" type="1"/>
     <File name="cmsis_lib/source/stm32f4xx_dma.c" path="cmsis_lib/source/stm32f4xx_dma.c" type="1"/>
     <File name="cmsis_lib/source/stm32f4xx_can.c" path="cmsis_lib/source/stm32f4xx_can.c" type="1"/>
@@ -178,9 +178,9 @@
     <File name="cmsis_lib/source/stm32f4xx_sdio.c" path="cmsis_lib/source/stm32f4xx_sdio.c" type="1"/>
     <File name="tm/tm_stm32f4_delay/tm_stm32f4_delay.h" path="tm/tm_stm32f4_delay/tm_stm32f4_delay.h" type="1"/>
     <File name="tm/tm_stm32f4_usb_hid_device/usb_hid_device/usbd_ioreq.h" path="tm/tm_stm32f4_usb_hid_device/usb_hid_device/usbd_ioreq.h" type="1"/>
-    <File name="cmsis_lib/source/stm32f4xx_exti.c" path="cmsis_lib/source/stm32f4xx_exti.c" type="1"/>
     <File name="cmsis_lib/source/stm32f4xx_cryp_tdes.c" path="cmsis_lib/source/stm32f4xx_cryp_tdes.c" type="1"/>
     <File name="cmsis_lib/include/stm32f4xx_exti.h" path="cmsis_lib/include/stm32f4xx_exti.h" type="1"/>
+    <File name="cmsis_lib/source/stm32f4xx_exti.c" path="cmsis_lib/source/stm32f4xx_exti.c" type="1"/>
     <File name="tm/tm_stm32f4_usb_hid_device/usb_hid_device/usb_regs.h" path="tm/tm_stm32f4_usb_hid_device/usb_hid_device/usb_regs.h" type="1"/>
     <File name="cmsis_lib/source/stm32f4xx_hash_md5.c" path="cmsis_lib/source/stm32f4xx_hash_md5.c" type="1"/>
     <File name="tm/tm_stm32f4_gpio/tm_stm32f4_gpio.c" path="tm/tm_stm32f4_gpio/tm_stm32f4_gpio.c" type="1"/>

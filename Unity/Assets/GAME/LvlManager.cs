@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Threading;
 
 public class LvlManager : MonoBehaviour
 {
@@ -11,15 +12,16 @@ public class LvlManager : MonoBehaviour
     void Start()
     {
         lives = 100;
+       
     }
 
     // Update is called once per frame
     void Update()
     {
 
-   
+     
 
-       if (lives <= 0)
+        if (lives <= 0)
         {
             // restartText.SetActive(true);
             highScore= PlayerPrefs.GetInt("HighScore");
@@ -45,6 +47,11 @@ public class LvlManager : MonoBehaviour
     public void AddPoints(int points)
     {
         score += points;
+       if (points ==10) 
+            GetComponent<AudioSource>().PlayScheduled(1);
+      
+     
+
     }
     public void DecLives()
     {

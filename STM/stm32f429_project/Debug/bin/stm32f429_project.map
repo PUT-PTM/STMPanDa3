@@ -2995,7 +2995,7 @@ OUTPUT(stm32f429_project.elf elf32-littlearm)
  .debug_ranges  0x00000948       0x70 ..\obj\stm32f4_discovery_lis302dl.o
  .debug_ranges  0x000009b8       0x40 ..\obj\usbd_ioreq.o
 
-.debug_line     0x00000000     0x4e15
+.debug_line     0x00000000     0x4e13
  .debug_line    0x00000000      0x70a ..\obj\usb_core.o
  .debug_line    0x0000070a      0x3ce ..\obj\tm_stm32f4_usb_hid_device.o
  .debug_line    0x00000ad8      0x295 ..\obj\usbd_usr.o
@@ -3003,22 +3003,22 @@ OUTPUT(stm32f429_project.elf elf32-littlearm)
  .debug_line    0x00000fdc       0xa7 ..\obj\startup_stm32f4xx.o
  .debug_line    0x00001083      0x253 ..\obj\usbd_hid_core.o
  .debug_line    0x000012d6      0x380 ..\obj\usbd_core.o
- .debug_line    0x00001656      0x30d ..\obj\main.o
- .debug_line    0x00001963      0x684 ..\obj\stm32f4xx_rcc.o
- .debug_line    0x00001fe7      0x3a2 ..\obj\tm_stm32f4_delay.o
- .debug_line    0x00002389      0x23d ..\obj\usbd_desc.o
- .debug_line    0x000025c6      0x3a8 ..\obj\stm32f4xx_gpio.o
- .debug_line    0x0000296e      0x20e ..\obj\system_stm32f4xx.o
- .debug_line    0x00002b7c      0x323 ..\obj\usb_bsp.o
- .debug_line    0x00002e9f      0x425 ..\obj\usbd_req.o
- .debug_line    0x000032c4      0x411 ..\obj\usb_dcd_int.o
- .debug_line    0x000036d5      0x4a8 ..\obj\stm32f4xx_spi.o
- .debug_line    0x00003b7d      0x2d0 ..\obj\stm32f4xx_exti.o
- .debug_line    0x00003e4d      0x276 ..\obj\misc.o
- .debug_line    0x000040c3      0x369 ..\obj\usb_dcd.o
- .debug_line    0x0000442c      0x3ac ..\obj\tm_stm32f4_gpio.o
- .debug_line    0x000047d8      0x3ea ..\obj\stm32f4_discovery_lis302dl.o
- .debug_line    0x00004bc2      0x253 ..\obj\usbd_ioreq.o
+ .debug_line    0x00001656      0x30b ..\obj\main.o
+ .debug_line    0x00001961      0x684 ..\obj\stm32f4xx_rcc.o
+ .debug_line    0x00001fe5      0x3a2 ..\obj\tm_stm32f4_delay.o
+ .debug_line    0x00002387      0x23d ..\obj\usbd_desc.o
+ .debug_line    0x000025c4      0x3a8 ..\obj\stm32f4xx_gpio.o
+ .debug_line    0x0000296c      0x20e ..\obj\system_stm32f4xx.o
+ .debug_line    0x00002b7a      0x323 ..\obj\usb_bsp.o
+ .debug_line    0x00002e9d      0x425 ..\obj\usbd_req.o
+ .debug_line    0x000032c2      0x411 ..\obj\usb_dcd_int.o
+ .debug_line    0x000036d3      0x4a8 ..\obj\stm32f4xx_spi.o
+ .debug_line    0x00003b7b      0x2d0 ..\obj\stm32f4xx_exti.o
+ .debug_line    0x00003e4b      0x276 ..\obj\misc.o
+ .debug_line    0x000040c1      0x369 ..\obj\usb_dcd.o
+ .debug_line    0x0000442a      0x3ac ..\obj\tm_stm32f4_gpio.o
+ .debug_line    0x000047d6      0x3ea ..\obj\stm32f4_discovery_lis302dl.o
+ .debug_line    0x00004bc0      0x253 ..\obj\usbd_ioreq.o
 
 .debug_str      0x00000000     0x49bf
  .debug_str     0x00000000     0x137d ..\obj\usb_core.o
