@@ -14,17 +14,24 @@ public class Play : MonoBehaviour {
         Application.LoadLevel(1);
         
     }
-   
-void Update()
+
+    void Update()
     {
         moveDir.y = Input.GetAxis("Vertical");
 
-          if(moveDir.y >0.3 &&  Input.GetButtonDown("Fire1"))
+        if (moveDir.y > 0.5 && Input.GetButtonDown("Fire1"))
         {
             Application.LoadLevel(1);
-        transform.localScale *= 0.9F;
+            transform.localScale *= 1.5F;
+
+        }
+        if (moveDir.y > 0.5)
+
+            gameObject.GetComponent<Renderer>().material.color = Color.green;
+        else
+            gameObject.GetComponent<Renderer>().material.color = Color.white;
+
     }
-}
 
 
 }

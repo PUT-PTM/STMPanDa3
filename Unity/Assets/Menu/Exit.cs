@@ -7,7 +7,7 @@ public class Exit : MonoBehaviour
 
     void OnMouseDown()
     {
-        transform.localScale *= 0.9F;
+        transform.localScale *= 1.5F;
     }
 
     void OnMouseUp()
@@ -19,13 +19,17 @@ public class Exit : MonoBehaviour
     void Update()
     {
         moveDir.y = Input.GetAxis("Vertical");
-
-        if (moveDir.y <-0.3  && Input.GetButtonDown("Fire1"))
+        if (moveDir.y < -0.5 && Input.GetButtonDown("Fire1"))
         {
-            Application.LoadLevel(1);
-        PlayerPrefs.DeleteKey("HighScore");
-            transform.localScale *= 0.9F;
+            Application.Quit();
+            PlayerPrefs.DeleteKey("HighScore");
+           transform.localScale *= 1.5F;
         }
+        if (moveDir.y < -0.5)
 
-        }
+            gameObject.GetComponent<Renderer>().material.color = Color.red;
+        else
+            gameObject.GetComponent<Renderer>().material.color = Color.white;
+
+    }
 }
