@@ -60,7 +60,7 @@
 </editor>
 <editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="main.c" partName="main.c" path="C:/Users/Drygi/Documents/GitHub/STMPanDa3/STM/main.c" title="main.c" tooltip="C:/Users/Drygi/Documents/GitHub/STMPanDa3/STM/main.c" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/stm32f429_project/main.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="173" selectionTopPixel="0"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="3214" selectionTopPixel="2365"/>
 </editor>
 </editors>
 <views>

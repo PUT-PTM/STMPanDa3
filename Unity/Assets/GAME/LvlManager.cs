@@ -17,7 +17,7 @@ public class LvlManager : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        lives = 3;
+        lives = 300;
         audio = GetComponent<AudioSource>();
 
     }
