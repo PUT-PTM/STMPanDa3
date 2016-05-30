@@ -7,7 +7,8 @@ public class LvlManager : MonoBehaviour
     public int highScore = 0;
     public int score = 0;
     public int lives;
-    public GameObject restartText;
+    public GameObject restartText1;
+    public GameObject restartText2;
     public AudioClip ac1;
     public AudioClip ac2;
     public AudioClip ac3;
@@ -17,6 +18,8 @@ public class LvlManager : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        restartText1.SetActive(false);
+        restartText2.SetActive(false);
         lives = 100;
         audio = GetComponent<AudioSource>();
 
@@ -31,8 +34,9 @@ public class LvlManager : MonoBehaviour
         if (lives <= 0)
         {
            
-            // restartText.SetActive(true);
-            highScore= PlayerPrefs.GetInt("HighScore");
+            restartText1.SetActive(true);
+            restartText2.SetActive(true);
+            highScore = PlayerPrefs.GetInt("HighScore");
             if (highScore<score)
             {
                 highScore = score;
@@ -57,7 +61,7 @@ public class LvlManager : MonoBehaviour
     public void AddPoints(int points)
     {
         score += points;
-        if(score%100==0) audio.PlayOneShot(ac3, 1.0F);
+        if(score%100==0 && score >0) audio.PlayOneShot(ac3, 1.0F);
 
         if (points == 10)
             audio.PlayOneShot(ac1,1.0F);
