@@ -5,6 +5,7 @@ using System.Threading;
 
 public class Patrol : MonoBehaviour
 {
+    private bool hasCollide = false;
     public int sPoints = 10;
     public int mPoints = -30;
     public LvlManager lvlman;
@@ -103,11 +104,19 @@ public class Patrol : MonoBehaviour
         {
             if(this.gameObject.name == "ocena2")
             {
-                DestructionM();
+                if (hasCollide == false)
+                {
+                    hasCollide = true;
+                    DestructionM();
+                }
             }
             else
             {
-                DestructionS();
+                if (hasCollide == false)
+                {
+                    hasCollide = true;
+                    DestructionS();
+                }
             }
         }
         if (other.gameObject.name == "ground")
@@ -115,13 +124,22 @@ public class Patrol : MonoBehaviour
             lvlman.collisioncount += 1;
             if (this.gameObject.name != "ocena2")
             {
-                DestructionD();
+                if (hasCollide == false)
+                {
+                    hasCollide = true;
+                    DestructionD();
+                }
             }
             else
             {
-                Destroy(this.gameObject, 0);         
+                if (hasCollide == false)
+                {
+                    hasCollide = true;
+                    Destroy(this.gameObject, 0);
+                }
             }
+        }
+        hasCollide = false;
     }
-}
 }
 
