@@ -16,15 +16,31 @@ public class Patrol : MonoBehaviour
     public GameObject note;
     // Use this for initialization
 
+    void DestructionM()
+    {
+        Destroy(this.gameObject, 0);
+        lvlman.AddPoints(mPoints);
+    }
+
+    void DestructionS()
+    {
+        Destroy(this.gameObject, 0);
+        lvlman.AddPoints(sPoints);
+    }
+
+    void DestructionD()
+    {
+        Destroy(this.gameObject, 0);
+        lvlman.DecLives();
+    }
+
     void Start()
     {
        transform.position = patrolPoints[0].position;
         currentPoint = 0;
        StartCoroutine(i());
-       
-
-
     }
+
     IEnumerator i()
     {
         float a = 3;
@@ -84,40 +100,25 @@ public class Patrol : MonoBehaviour
         {
             if(this.gameObject.name == "ocena2")
             {
-                Destroy(this.gameObject, 0);
-                lvlman.AddPoints(mPoints);
-               
+                DestructionM();
             }
             else
             {
-                Destroy(this.gameObject, 0);
-                lvlman.AddPoints(sPoints);
-              
+                DestructionS();
             }
         }
         if (other.gameObject.name == "ground")
         {
-                        
-
+            lvlman.collisioncount += 1;
             if (this.gameObject.name != "ocena2")
             {
-                Destroy(this.gameObject, 0);
-                lvlman.DecLives();
-              
-                
-
+                DestructionD();
             }
             else
             {
-                Destroy(this.gameObject, 0);
-               
-           
-        }
+                Destroy(this.gameObject, 0);         
+            }
     }
-
 }
-
-
-
 }
 
