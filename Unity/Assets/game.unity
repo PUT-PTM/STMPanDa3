@@ -246,11 +246,13 @@ MonoBehaviour:
   sPoints: 10
   mPoints: -30
   lvlman: {fileID: 1160320339}
+  Dlives: 0
   patrolPoints:
   - {fileID: 955208349}
   - {fileID: 564196346}
   moveSpeed: 0
   note: {fileID: 0}
+  end: {fileID: 0}
 --- !u!1 &111289678
 GameObject:
   m_ObjectHideFlags: 0
@@ -824,7 +826,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: a63f650ca459c2a469dfee7f9d2ec51d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1099,6 +1101,7 @@ MonoBehaviour:
   ac3: {fileID: 8300000, guid: 1eaf8e75446e17d449da0cee4f852001, type: 3}
   ac4: {fileID: 8300000, guid: 4f2dd9bc08f23664aa3ff97ac7b8c5f5, type: 3}
   ac5: {fileID: 8300000, guid: 99bdb3686499f66489fdcbd8ac525066, type: 3}
+  collisioncount: 0
 --- !u!4 &1160320340
 Transform:
   m_ObjectHideFlags: 0
@@ -1424,11 +1427,13 @@ MonoBehaviour:
   sPoints: 10
   mPoints: -30
   lvlman: {fileID: 1160320339}
+  Dlives: 0
   patrolPoints:
   - {fileID: 1382261385}
   - {fileID: 680052299}
   moveSpeed: 0
   note: {fileID: 0}
+  end: {fileID: 0}
 --- !u!23 &1247307187
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1502,11 +1507,13 @@ MonoBehaviour:
   sPoints: 10
   mPoints: -30
   lvlman: {fileID: 1160320339}
+  Dlives: 0
   patrolPoints:
   - {fileID: 2023434071}
   - {fileID: 844189437}
   moveSpeed: 0
   note: {fileID: 0}
+  end: {fileID: 0}
 --- !u!61 &1376534325
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1807,11 +1814,13 @@ MonoBehaviour:
   sPoints: 10
   mPoints: -30
   lvlman: {fileID: 1160320339}
+  Dlives: 0
   patrolPoints:
   - {fileID: 1230120493}
   - {fileID: 1381531300}
   moveSpeed: 0
   note: {fileID: 0}
+  end: {fileID: 0}
 --- !u!1 &1425225619
 GameObject:
   m_ObjectHideFlags: 0

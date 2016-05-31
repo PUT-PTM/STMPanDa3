@@ -21,7 +21,7 @@ public class LvlManager : MonoBehaviour
     {
         restartText1.SetActive(false);
         restartText2.SetActive(false);
-        lives = 100;
+        lives = 3;
         audio = GetComponent<AudioSource>();
 
     }

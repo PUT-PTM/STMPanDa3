@@ -94,8 +94,8 @@ public class Patrol : MonoBehaviour
         }
         else
         {
-        //transform.position = Vector2.MoveTowards(transform.position, patrolPoints[currentPoint].position,
-        //    moveSpeed = Time.deltaTime  * (2+lvlman.fallSpeed()));
+       // transform.position = Vector2.MoveTowards(transform.position, patrolPoints[currentPoint].position,
+        //  moveSpeed = Time.deltaTime  * (2+lvlman.fallSpeed()));
             transform.position = Vector2.MoveTowards(transform.position, patrolPoints[currentPoint].position,
             moveSpeed = Time.deltaTime * 2 *2);
         }

@@ -12,7 +12,7 @@ public class endPositionScript : MonoBehaviour {
     }
     public void rand()
     {
-        int RandX = Random.Range(-20, 20);
+        int RandX = Random.Range(-10, 13);
         Vector3 newPosition = new Vector3(RandX, -20, 0);
         transform.position = newPosition;
         StartCoroutine(i());
