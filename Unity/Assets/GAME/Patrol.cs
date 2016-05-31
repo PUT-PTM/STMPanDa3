@@ -102,7 +102,7 @@ public class Patrol : MonoBehaviour
     {
         if(other.gameObject.name == "PanDa3")
         {
-            if(this.gameObject.name.Contains("ocena2"))
+            if(this.gameObject.name == "ocena2")
             {
                 if (hasCollide == false)
                 {
@@ -122,22 +122,21 @@ public class Patrol : MonoBehaviour
         if (other.gameObject.name == "ground")
         {
             lvlman.collisioncount += 1;
-            if (this.gameObject.name.Contains("ocena2"))
-            {
-                if (hasCollide == false)
-                {
-                    hasCollide = true;
-                    Destroy(this.gameObject, 0);
-                }  
-            }
-            else
+            if (this.gameObject.name != "ocena2")
             {
                 if (hasCollide == false)
                 {
                     hasCollide = true;
                     DestructionD();
                 }
-                
+            }
+            else
+            {
+                if (hasCollide == false)
+                {
+                    hasCollide = true;
+                    Destroy(this.gameObject, 0);
+                }
             }
         }
         hasCollide = false;
