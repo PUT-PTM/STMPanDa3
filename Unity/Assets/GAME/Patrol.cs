@@ -15,6 +15,8 @@ public class Patrol : MonoBehaviour
     private int currentPoint;
     public GameObject note;
     public endPositionScript end;
+    private string last = string.Empty;
+    private int count = 0;
     // Use this for initialization
 
     void DestructionM()
@@ -44,7 +46,7 @@ public class Patrol : MonoBehaviour
 
     IEnumerator i()
     {
-        float a = 5;
+        float a = 4;
         yield return new WaitForSeconds(a);
         newenemy();
     }
@@ -52,6 +54,9 @@ public class Patrol : MonoBehaviour
     void newenemy()
     {
         GameObject.Instantiate(this.gameObject);
+        //count++;
+        //if(count>=20)
+        //    StopAllCoroutines();
         //end.rand();
         StartCoroutine(i());
     }
@@ -92,7 +97,7 @@ public class Patrol : MonoBehaviour
         //transform.position = Vector2.MoveTowards(transform.position, patrolPoints[currentPoint].position,
         //    moveSpeed = Time.deltaTime  * (2+lvlman.fallSpeed()));
             transform.position = Vector2.MoveTowards(transform.position, patrolPoints[currentPoint].position,
-            moveSpeed = Time.deltaTime * 2);
+            moveSpeed = Time.deltaTime * 2 *2);
         }
     }
 
@@ -102,44 +107,39 @@ public class Patrol : MonoBehaviour
     {
         if(other.gameObject.name == "PanDa3")
         {
-            if(this.gameObject.name == "ocena2")
+            if (last != this.gameObject.name || last == string.Empty)
             {
-                if (hasCollide == false)
+                last = this.gameObject.name;
+                if (this.gameObject.name.Contains("ocena2"))
                 {
-                    hasCollide = true;
+                    //GameObject.Instantiate(this.gameObject);
                     DestructionM();
                 }
-            }
-            else
-            {
-                if (hasCollide == false)
+                else
                 {
-                    hasCollide = true;
+                    //GameObject.Instantiate(this.gameObject);
                     DestructionS();
                 }
             }
         }
         if (other.gameObject.name == "ground")
         {
-            lvlman.collisioncount += 1;
-            if (this.gameObject.name != "ocena2")
+            if (last != this.gameObject.name || last == string.Empty)
             {
-                if (hasCollide == false)
+                last = this.gameObject.name;
+                lvlman.collisioncount += 1;
+                if (this.gameObject.name.Contains("ocena2")==false)
                 {
-                    hasCollide = true;
+                    //GameObject.Instantiate(this.gameObject);
                     DestructionD();
                 }
-            }
-            else
-            {
-                if (hasCollide == false)
+                else
                 {
-                    hasCollide = true;
-                    Destroy(this.gameObject, 0);
+                   //GameObject.Instantiate(this.gameObject);
+                   Destroy(this.gameObject, 0);
                 }
             }
         }
-        hasCollide = false;
     }
 }
 
