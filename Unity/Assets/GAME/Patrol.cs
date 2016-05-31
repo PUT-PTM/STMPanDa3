@@ -1,5 +1,4 @@
-﻿
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 using System.Threading;
 
@@ -9,11 +8,12 @@ public class Patrol : MonoBehaviour
     public int sPoints = 10;
     public int mPoints = -30;
     public LvlManager lvlman;
-
+    public int Dlives=0;
     public Transform[] patrolPoints;
     public float moveSpeed;
     private int currentPoint;
     public GameObject note;
+    public endPositionScript end;
     // Use this for initialization
 
     void DestructionM()
@@ -43,7 +43,7 @@ public class Patrol : MonoBehaviour
 
     IEnumerator i()
     {
-        float a = 3;
+        float a = 5;
         yield return new WaitForSeconds(a);
         newenemy();
     }
@@ -51,6 +51,7 @@ public class Patrol : MonoBehaviour
     void newenemy()
     {
         GameObject.Instantiate(this.gameObject);
+        //end.rand();
         StartCoroutine(i());
     }
     // Update is called once per frame
@@ -87,8 +88,10 @@ public class Patrol : MonoBehaviour
         }
         else
         {
-        transform.position = Vector2.MoveTowards(transform.position, patrolPoints[currentPoint].position,
-            moveSpeed = Time.deltaTime  * (2+lvlman.fallSpeed()));
+        //transform.position = Vector2.MoveTowards(transform.position, patrolPoints[currentPoint].position,
+        //    moveSpeed = Time.deltaTime  * (2+lvlman.fallSpeed()));
+            transform.position = Vector2.MoveTowards(transform.position, patrolPoints[currentPoint].position,
+            moveSpeed = Time.deltaTime * 2);
         }
     }
 
