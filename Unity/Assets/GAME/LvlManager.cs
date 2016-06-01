@@ -13,7 +13,7 @@ public class LvlManager : MonoBehaviour
     public AudioClip ac2;
     public AudioClip ac3;
     public AudioClip ac4;
-    public AudioClip ac5;
+
     AudioSource audio;
     public int collisioncount = 0;
     // Use this for initialization
@@ -49,7 +49,6 @@ public class LvlManager : MonoBehaviour
 
 
             Destroy(GameObject.Find("PanDa3"), 0);
-            audio.PlayOneShot(ac5, 1.0F);
             return; 
         }
     }
