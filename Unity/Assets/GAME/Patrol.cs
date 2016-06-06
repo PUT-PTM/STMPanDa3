@@ -9,7 +9,7 @@ public class Patrol : MonoBehaviour
     public int sPoints = 10;
     public int mPoints = -30;
     public LvlManager lvlman;
-    public int Dlives=0;
+    public int Dlives = 0;
     public Transform[] patrolPoints;
     public float moveSpeed;
     private int currentPoint;
@@ -17,7 +17,6 @@ public class Patrol : MonoBehaviour
     public endPositionScript end;
     private string last = string.Empty;
     private int count = 0;
-    // Use this for initialization
 
     void DestructionM()
     {
@@ -39,41 +38,13 @@ public class Patrol : MonoBehaviour
 
     void Start()
     {
-       transform.position = patrolPoints[0].position;
-        currentPoint = 0;
-       StartCoroutine(i());
+        transform.position = patrolPoints[0].position;
+        currentPoint = 0;      
     }
-
-    IEnumerator i()
-    {
-        float a = 4;
-        yield return new WaitForSeconds(a);
-        newenemy();
-    }
-
-    void newenemy()
-    {
-        GameObject.Instantiate(this.gameObject);
-        //count++;
-        //if(count>=20)
-        //    StopAllCoroutines();
-        //end.rand();
-        StartCoroutine(i());
-    }
-    // Update is called once per frame
 
     void Update()
     {
-
-        //if ((objectCount%5<1)&&(objectCount < 100))
-        //{
-        //    objectCount++;
-
-        //    var note = GameObject.Instantiate(this.gameObject);
-
-        //}
-
-        if (lvlman.lives<=0)
+        if (lvlman.lives <= 0)
         {
             StopAllCoroutines();
         }
@@ -87,37 +58,37 @@ public class Patrol : MonoBehaviour
         {
             transform.position = patrolPoints[0].position;
         }
-        if (lvlman.lives <=0)
+        if (lvlman.lives <= 0)
         {
             transform.position = Vector2.MoveTowards(transform.position, patrolPoints[currentPoint].position,
                moveSpeed = 0);
         }
         else
         {
-       // transform.position = Vector2.MoveTowards(transform.position, patrolPoints[currentPoint].position,
-        //  moveSpeed = Time.deltaTime  * (2+lvlman.fallSpeed()));
-            transform.position = Vector2.MoveTowards(transform.position, patrolPoints[currentPoint].position,
-            moveSpeed = Time.deltaTime * 2 *2);
+            if (lvlman.score < 500)
+                transform.position = Vector2.MoveTowards(transform.position, patrolPoints[currentPoint].position,
+                moveSpeed = Time.deltaTime * 2);
+            else
+                transform.position = Vector2.MoveTowards(transform.position, patrolPoints[currentPoint].position,
+            moveSpeed = Time.deltaTime * 3);
         }
     }
 
-   
-
     void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.gameObject.name == "PanDa3")
+        if (other.gameObject.name == "PanDa3")
         {
             if (last != this.gameObject.name || last == string.Empty)
             {
                 last = this.gameObject.name;
                 if (this.gameObject.name.Contains("ocena2"))
                 {
-                    //GameObject.Instantiate(this.gameObject);
+                    GameObject.Instantiate(this.gameObject);
                     DestructionM();
                 }
                 else
                 {
-                    //GameObject.Instantiate(this.gameObject);
+                    GameObject.Instantiate(this.gameObject);
                     DestructionS();
                 }
             }
@@ -128,18 +99,17 @@ public class Patrol : MonoBehaviour
             {
                 last = this.gameObject.name;
                 lvlman.collisioncount += 1;
-                if (this.gameObject.name.Contains("ocena2")==false)
+                if (this.gameObject.name.Contains("ocena2") == false)
                 {
-                    //GameObject.Instantiate(this.gameObject);
+                    GameObject.Instantiate(this.gameObject);
                     DestructionD();
                 }
                 else
                 {
-                   //GameObject.Instantiate(this.gameObject);
-                   Destroy(this.gameObject, 0);
+                    GameObject.Instantiate(this.gameObject);
+                    Destroy(this.gameObject, 0);
                 }
             }
         }
     }
 }
-
