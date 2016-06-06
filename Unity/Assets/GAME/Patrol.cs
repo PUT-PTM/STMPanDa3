@@ -98,7 +98,6 @@ public class Patrol : MonoBehaviour
             if (last != this.gameObject.name || last == string.Empty)
             {
                 last = this.gameObject.name;
-                lvlman.collisioncount += 1;
                 if (this.gameObject.name.Contains("ocena2") == false)
                 {
                     GameObject.Instantiate(this.gameObject);

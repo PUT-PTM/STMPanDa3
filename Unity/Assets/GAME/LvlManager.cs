@@ -15,7 +15,7 @@ public class LvlManager : MonoBehaviour
     public AudioClip ac4;
 
     AudioSource audio;
-    public int collisioncount = 0;
+    
     // Use this for initialization
     void Start()
     {
@@ -81,7 +81,7 @@ public class LvlManager : MonoBehaviour
         guiStyle.fontSize = 35;
         GUI.contentColor = Color.black;
         highScore= PlayerPrefs.GetInt("HighScore");
-        GUILayout.Label(score.ToString() + "\nHighScore: " + highScore.ToString() + "\nlives:" + lives.ToString() + "\ncollision:" + collisioncount.ToString(), guiStyle);
+        GUILayout.Label(score.ToString() + "\nHighScore: " + highScore.ToString() + "\nlives:" + lives.ToString(), guiStyle);
 
     }
 
