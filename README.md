@@ -28,7 +28,8 @@ Gimp
 
 #How to run
 
-Download relase file and click twice on the PanDa3.exe
+Download relase file, open STM file in CoCox, compile program and send to STM or just play on your gamepad.
+Then click twice on panda3.exe and have fun. :)
 
 #How to compile
 
