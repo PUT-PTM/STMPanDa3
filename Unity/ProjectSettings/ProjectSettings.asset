@@ -9,9 +9,9 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
-  productName: 2013_10 - Sample Assets
-  defaultCursor: {fileID: 0}
+  companyName: 'Drygi&Seba '
+  productName: PanDa3
+  defaultCursor: {fileID: 2800000, guid: 64b4f1ff6749aef4f999004e50cafcd8, type: 3}
   cursorHotspot: {x: 0, y: 0}
   m_ShowUnitySplashScreen: 1
   m_VirtualRealitySplashScreen: {fileID: 0}
@@ -173,7 +173,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 0}
+      m_Icon: {fileID: 2800000, guid: 64b4f1ff6749aef4f999004e50cafcd8, type: 3}
       m_Width: 128
       m_Height: 128
   m_BuildTargetBatching: []
