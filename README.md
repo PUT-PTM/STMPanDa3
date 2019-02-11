@@ -1,4 +1,4 @@
-#STMPanDa3
+# STMPanDa3
 
 Is a simple game as a univeristy project for Microprocessors lab at the Poznan University of Technology. We have a Panda as a player, which can be controlled by an accelerometer built into the STM32F407 Discovery board. All you have to do is catch falling grades from 3 to 5 and your score will increase. When you catch 2 your score will decrease and when you don't catch grades from 3 to 5 your live will decrease. 
 In menu move your STM up to Play and move down to exit.
@@ -39,7 +39,7 @@ Just run PanDa3.exe
 #Attributions
 
 Graphics: Kung fu Panda, 
-Music: Drygi - Robiê Rap, The Dark Knight Rises (Main Theme)
+Music: Drygi - RobiÃª Rap, The Dark Knight Rises (Main Theme)
 
 #License 
 
@@ -52,7 +52,7 @@ Mikolaj Drygas
 Sebastian Szeszko
  
 The project was conducted during the Microprocessor Lab course held by the Institute of Control and Information Engineering, Poznan University of Technology.
-Supervisor: Micha³ Fularz/Tomasz Mañkowski
+Supervisor: MichaÂ³ Fularz/Tomasz MaÃ±kowski
 
 
 
